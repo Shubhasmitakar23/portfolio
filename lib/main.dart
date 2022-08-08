@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +34,24 @@ class MyHomePage extends StatelessWidget {
           CircleAvatar(
             radius: 70,
             backgroundImage:  NetworkImage('https://media-exp1.licdn.com/dms/image/C4D03AQHQhgBsd-r85Q/profile-displayphoto-shrink_200_200/0/1653887873548?e=1665619200&v=beta&t=8pU6L4--XQ8qu6ZrgKThD_xpBOnwnAOM7T6AtHLM7B4'),
-          )
+          ),
+            Text('Shubhasmita Kar', style: TextStyle(fontSize: 20),),
+            SizedBox(
+              height: 20,
+            ),
+            Divider(
+              color: Colors.black,
+              height: 2,
+              thickness: 1,
+              indent: 180,
+              endIndent: 180,
+            ),
+            Row(
+              children: [
+                
+
+              ],
+            )
         ],),
       ),
     ));
