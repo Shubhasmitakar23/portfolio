@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const MyApp());
@@ -43,12 +45,45 @@ class MyHomePage extends StatelessWidget {
               color: Colors.black,
               height: 2,
               thickness: 1,
-              indent: 180,
-              endIndent: 180,
+              indent: 300,
+              endIndent: 300,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                
+                IconButton(
+                    onPressed: () async {
+                      final Uri url = Uri.parse('https://shubhasmitakar23.github.io/');
+                      if (await canLaunchUrl(url)){
+                        await launch('https://shubhasmitakar23.github.io/');
+                      }
+                      else{
+                        throw 'Could not launch.';
+                      }
+                    },
+                    icon: FaIcon(FontAwesomeIcons.globe,size: 30,)),
+                IconButton(
+                    onPressed: () async {
+                      final Uri url = Uri.parse('https://github.com/Shubhasmitakar23');
+                      if (await canLaunchUrl(url)){
+                        await launch('https://github.com/Shubhasmitakar23');
+                      }
+                      else{
+                        throw 'Could not launch.';
+                      }
+                    },
+                    icon: FaIcon(FontAwesomeIcons.github,size: 30,)),
+                IconButton(
+                    onPressed: () async {
+                      final Uri url = Uri.parse('https://www.linkedin.com/in/shubhasmita-kar-300965228/');
+                      if (await canLaunchUrl(url)){
+                        await launch('https://www.linkedin.com/in/shubhasmita-kar-300965228/');
+                      }
+                      else{
+                        throw 'Could not launch.';
+                      }
+                    },
+                    icon: FaIcon(FontAwesomeIcons.linkedin,size: 30,)),
 
               ],
             )
